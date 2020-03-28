@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/immortal/titleFontRes.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/immortal/buttonFontRes60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/immortal/labelFontRes40.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/LobbyScene.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+margin_top = 109.0
+margin_right = 1024.0
+margin_bottom = 259.0
+rect_min_size = Vector2( 0, 150 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Play Online"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 263.0
+margin_right = 1024.0
+margin_bottom = 313.0
+alignment = 1
+
+[node name="HostLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 157.0
+margin_right = 362.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 205, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Host:"
+align = 2
+valign = 1
+
+[node name="HostEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+margin_left = 366.0
+margin_right = 866.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 500, 0 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 317.0
+margin_right = 1024.0
+margin_bottom = 367.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 157.0
+margin_right = 362.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 205, 0 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Username:"
+align = 2
+valign = 1
+
+[node name="NameEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 366.0
+margin_right = 866.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 500, 0 )
+
+[node name="VSpacer" type="Label" parent="VBoxContainer"]
+margin_top = 370.0
+margin_right = 1024.0
+margin_bottom = 395.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 400.0
+margin_right = 1024.0
+margin_bottom = 490.0
+alignment = 1
+
+[node name="ConnectButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 155.0
+margin_right = 390.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 235, 90 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Join"
+flat = true
+
+[node name="HostButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 394.0
+margin_right = 629.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 235, 90 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Host"
+flat = true
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 633.0
+margin_right = 868.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 235, 90 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+flat = true
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/BackButton" to="." method="_on_BackButton_pressed"]
