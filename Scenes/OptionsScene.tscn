@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/immortal/titleFontRes.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/immortal/buttonFontRes60.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scenes/TitleScene.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/OptionsScene.gd" type="Script" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -23,46 +23,29 @@ __meta__ = {
 }
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer"]
-margin_top = 131.0
+margin_top = 178.0
 margin_right = 1024.0
-margin_bottom = 281.0
+margin_bottom = 328.0
 rect_min_size = Vector2( 0, 150 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Legilimens"
+text = "Options"
 align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 285.0
+margin_top = 332.0
 margin_right = 1024.0
-margin_bottom = 375.0
+margin_bottom = 422.0
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 432.0
 margin_right = 592.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 160, 90 )
 focus_mode = 0
 custom_fonts/font = ExtResource( 2 )
-text = "Play"
+text = "Back"
 flat = true
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 379.0
-margin_right = 1024.0
-margin_bottom = 469.0
-alignment = 1
-
-[node name="OptionsButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 394.0
-margin_right = 629.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 235, 90 )
-focus_mode = 0
-custom_fonts/font = ExtResource( 2 )
-text = "Options"
-flat = true
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
