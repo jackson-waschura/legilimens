@@ -19,6 +19,10 @@ config/name="Legilimens"
 run/main_scene="res://Scenes/TitleScene.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 
+[autoload]
+
+Global="*res://Scenes/Global.gd"
+
 [rendering]
 
 environment/default_clear_color=Color( 0.215686, 0.215686, 0.215686, 1 )
