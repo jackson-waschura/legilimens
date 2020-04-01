@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/immortal/titleFontRes.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/immortal/buttonFontRes60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/OptionsScene.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+margin_top = 178.0
+margin_right = 1024.0
+margin_bottom = 328.0
+rect_min_size = Vector2( 0, 150 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Options"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 332.0
+margin_right = 1024.0
+margin_bottom = 422.0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 432.0
+margin_right = 592.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 160, 90 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+flat = true
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
